@@ -1,0 +1,1 @@
+Get-Service | where {$_.Status -eq "Stopped"} | where {$_.StartType -eq "Automatic"} | Out-GridView -PassThru | %{Start-Service -InputObject $_ -PassThru}
